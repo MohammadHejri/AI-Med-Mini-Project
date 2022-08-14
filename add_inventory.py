@@ -2,7 +2,6 @@ import json
 import argparse
 from typing import Dict, List, Literal
 
-
 parser = argparse.ArgumentParser(description='Append an inventory to deploy workflow.')
 parser.add_argument('inventory', type=str, help='inventory name.')
 

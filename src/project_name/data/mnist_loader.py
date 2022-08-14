@@ -3,6 +3,7 @@ import numpy as np
 from sklearn.datasets import fetch_openml
 from sklearn.model_selection import train_test_split
 from mlassistant.core.data import ContentLoader
+
 if TYPE_CHECKING:
     from ..config import MnistConfig
 
@@ -42,8 +43,8 @@ class MnistLoader(ContentLoader):
         self._y = self._y[indices]
 
     def get_views_indices(self):
-        return self.get_samples_names(),\
-            np.arange(len(self._x)).reshape((len(self._x), 1))
+        return self.get_samples_names(), \
+               np.arange(len(self._x)).reshape((len(self._x), 1))
 
     def get_samples_batch_effect_groups(self):
         pass
@@ -61,10 +62,10 @@ class MnistLoader(ContentLoader):
             'y': self._get_y,
         }
 
-    def _get_x(self, samples_inds: np.ndarray, samples_elements_inds: Union[None, np.ndarray])\
+    def _get_x(self, samples_inds: np.ndarray, samples_elements_inds: Union[None, np.ndarray]) \
             -> np.ndarray:
         return self._x[samples_inds]
 
-    def _get_y(self, samples_inds: np.ndarray, samples_elements_inds: Union[None, np.ndarray])\
+    def _get_y(self, samples_inds: np.ndarray, samples_elements_inds: Union[None, np.ndarray]) \
             -> np.ndarray:
         return self._y[samples_inds]

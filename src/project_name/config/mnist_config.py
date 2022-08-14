@@ -8,7 +8,6 @@ from ..data import MnistLoader
 class MnistConfig(NormalConfig):
 
     def __init__(self, try_name: str, try_num: int):
-
         super().__init__(
             data_separation=None,
             try_name=try_name,
